@@ -1,6 +1,6 @@
-# Scoreboard application built with React - Full Stack JavaScript Techdegree
+# React exercise - Full Stack JavaScript Techdegree
 
-### Flash Cards application
+### Scoreboard application
 This project is built using React to create a simple scoreboard application.
 
 ***
