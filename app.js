@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
-const title = <h1 id="main-title" title="This is a title">This is my first React Element!</h1>;
-
-const desc = <p>I just learned how to create a React node and render it to the DOM.</p>;
+const desc = 'I just learned how to create a React node and render it to the DOM.';
+const myTitleID = 'main-title';
+const name = 'Nick';
 
 const header = (
 	<header>
-		{title}
-		{desc}
+		<h1 id={ myTitleID }>{ name }'s first React element!</h1>
+		<p className="main-desc">{ desc }</p>
 	</header>
 );
 
