@@ -29,6 +29,7 @@ const Counter = () => {
   );
 }
 
+// Main React component to be rendered
 const App = () => {
 	return (
     <div className="scoreboard">
@@ -40,7 +41,7 @@ const App = () => {
   );
 }
 
-
+// Render React component to the page
 ReactDOM.render(
 	<App />,
 	document.getElementById('root')
