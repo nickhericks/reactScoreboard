@@ -9,14 +9,16 @@ const Header = (props) => (
 
 const Player = (props) => {
 	return (
-		<div className="player">
-			<span className="player-name">
-				{props.name}
-			</span>
+    <div className="player">
+      <span className="player-name">
+        <button className="remove-player" onClick={ () => props.removePlayer(props.id) }>✖</button>
 
-			<Counter />			
-		</div>
-	);
+        {props.name}
+      </span>
+
+      <Counter />
+    </div>
+  );
 }
 
 class Counter extends React.Component {
@@ -72,8 +74,10 @@ class App extends React.Component {
 	};
 	
 	handleRemovePlayer = (id) => {
-		this.setState({
-			players: 
+		this.setState( prevState => {
+			return {
+				players: prevState.players.filter( p => p.id !== id )
+			}
 		});
 	}
 
@@ -87,7 +91,12 @@ class App extends React.Component {
 
         {/* Players list */}
         {this.state.players.map(player => (
-          <Player name={player.name} key={player.id.toString()} />
+          <Player 
+						name={player.name} 
+						id={player.id}
+						key={player.id.toString()} 
+						removePlayer={this.handleRemovePlayer}
+					/>
         ))}
       </div>
     );
